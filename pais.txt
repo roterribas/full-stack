@@ -1,9 +1,9 @@
 Pais:
-Carapicuíba
-Santos
-Marilha
-Caieras
-Santo Amaro
-Goias
-Sergipe
-Manaus
+° Carapicuíba
+° Santos
+° Marilha
+° Caieras
+° Santo Amaro
+° Goias
+° Sergipe
+° Manaus
