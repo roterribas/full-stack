@@ -6,96 +6,131 @@
     <title>test2</title>
 
     <style>
+        /* ------------------ CONFIG GLOBAL ------------------ */
+        * {
+            transition: .3s ease; /* Transições suaves em tudo */
+        }
+
         body {
-            background: blue;
-            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4a00e0, #8e2de2);
+            font-family: "Segoe UI", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .doris {
-            border: 1px solid red;
-            max-width: 500px;
-            margin: 0 auto;
-            background: orange;
-            padding: 20px;
-            text-align: center;
+        /* Botão de alternar modo */
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px 20px;
             border-radius: 50px;
-        }
-
-        /* h1 */
-        .titulo {
-            color: #fff;
-            font-size: 22px;
-        }
-
-        /* h2 */
-        .subTitulo {
-            color: aqua;
-            font-size: 35px;
-        }
-
-        /* h3 */
-        .terceiro {
-            color: purple;
-            font-size: 28px;
+            cursor: pointer;
+            border: none;
             font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,.2);
         }
 
-        /* h4 */
-        .quarto {
-            color: darkgreen;
-            font-size: 24px;
-            text-transform: uppercase;
+        /* ------------------ CONTAINER ------------------ */
+        .doris {
+            background: #ffffffd9;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 22px;
+            box-shadow: 0px 10px 40px rgba(0,0,0,.35);
+            animation: fadeIn .8s ease; /* Animação suave ao carregar */
         }
 
-        /* h5 */
-        .quinto {
-            color: #333;
-            font-size: 20px;
-            background: yellow;
-            padding: 5px;
-            border-radius: 5px;
+        /* ------------------ TÍTULOS ------------------ */
+        .titulo { color:#4a00e0; font-size:27px; font-weight:700; }
+        .subTitulo { color:#222; font-size:31px; }
+        .terceiro { color:#8e2de2; font-size:26px; }
+        .quarto { color:#00a859; font-size:22px; }
+        .quinto { background:#f7b500; padding:6px 14px; border-radius:10px; color:#fff; display:inline-block; }
+        .sexto { color:#4a4a4a; font-size:16px; font-style:italic; }
+
+        /* Hover nos textos */
+        h1, h2, h3, h4, h5, h6, .forte, .marcador, .pequeno {
+            cursor: pointer;
+        }
+        h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+            transform: scale(1.08);
         }
 
-        /* h6 */
-        .sexto {
-            color: black;
-            font-size: 16px;
-            font-style: italic;
-            text-decoration: underline;
-        }
-
-        /* strong */
+        /* ------------------ OUTRAS TAGS ------------------ */
         .forte {
-            color: #000;
-            font-size: 18px;
-            background: #fff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 10px;
+            background:#4a00e0;
+            color:white;
+            padding:6px 12px;
+            border-radius:8px;
+            display:inline-block;
+            margin-top:15px;
         }
 
-        /* span */
         .marcador {
-            color: navy;
-            font-size: 18px;
-            display: block;
-            margin: 10px 0;
-            font-weight: 600;
+            display:block;
+            margin-top:10px;
+            font-size:18px;
+            font-weight:700;
+            color:#333;
         }
 
-        /* small */
         .pequeno {
-            color: #222;
-            font-size: 14px;
-            background: #ffe0e0;
-            padding: 3px 6px;
-            border-radius: 5px;
-            font-style: italic;
+            display:block;
+            margin:15px 0;
+            font-size:14px;
+            color:#555;
         }
+
+        .imgDev {
+            width:100%;
+            max-width:350px;
+            border-radius:15px;
+            box-shadow:0px 4px 15px rgba(0,0,0,0.25);
+            transition:transform .3s ease;
+        }
+        .imgDev:hover {
+            transform:scale(1.07);
+        }
+
+        /* ------------------ MODO ESCURO ------------------ */
+        .dark {
+            background: #121212; /* Fundo geral */
+        }
+        .dark .doris {
+            background:#1f1f1f;
+            color:white;
+            box-shadow:0px 0px 22px rgba(255,255,255,.1);
+        }
+        .dark .toggle-btn {
+            background:black;
+            color:white;
+        }
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+        .dark .marcador, .dark .pequeno {
+            color:#e2e2e2;
+        }
+
+        /* ------------------ ANIMAÇÕES ------------------ */
+        @keyframes fadeIn {
+            from { opacity:0; transform:translateY(30px); }
+            to { opacity:1; transform:translateY(0); }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Botão para alternar tema -->
+    <!-- <button class="toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button> -->
+
     <div class="doris">
         <h1 class="titulo">Test 2</h1>
         <h2 class="subTitulo">Rodriguinho</h2>
@@ -107,6 +142,16 @@
         <strong class="forte">Vitão</strong>
         <span class="marcador">Dev Jones</span>
         <small class="pequeno">Dudu</small>
+
+        <img src="./img/img-1.jpg" class="imgDev" />
     </div>
+
+    <!-- Script para trocar o modo -->
+    <!-- <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+        }
+    </script> -->
+
 </body>
 </html>
