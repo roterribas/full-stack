@@ -7,7 +7,9 @@
         }
 
         body {
-            background: linear-gradient(135deg, #5A00FF, #00C6FF);
+            /* background: linear-gradient(135deg, #5A00FF, #00C6FF); */
+            background: url('../img/bg-site.jpg') no-repeat;
+            background-size: cover;
             height: 900px;
             display: flex;
             justify-content: center;
