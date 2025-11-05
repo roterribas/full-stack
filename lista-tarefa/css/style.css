@@ -1,88 +1,121 @@
  /* ------- ESTILO GERAL ------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Arial, Helvetica, sans-serif;
+ }
 
-        body {
-            /* background: linear-gradient(135deg, #5A00FF, #00C6FF); */
-            background: url('../img/bg-site.jpg') no-repeat;
-            background-size: cover;
-            height: 900px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+ body {
+     /* background: linear-gradient(135deg, #5A00FF, #00C6FF); */
+     background: url('../img/bg-site.jpg') no-repeat;
+     background-size: cover;
+     height: 900px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
 
-        /* ------- CONTAINER ------- */
-        .container {
-            background: #ffffffdd;
-            padding: 30px;
-            width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px #00000040;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+ /* ------- CONTAINER ------- */
+ .container {
+     background: #ffffffdd;
+     padding: 30px;
+     width: 350px;
+     border-radius: 15px;
+     box-shadow: 0 5px 20px #00000040;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
 
-        /* ------- TÍTULO ------- */
-        h1 {
-            margin-bottom: 20px;
-            color: #ff0101;
-        }
+ /* ------- TÍTULO ------- */
+ h1 {
+     margin-bottom: 20px;
+     color: #ff0101;
+ }
 
-        /* ------- INPUT ------- */
-        #tarefa {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e7915c;
-            border-radius: 10px;
-            outline: none;
-            margin-bottom: 10px;
-            color: orangered;
-        }
+ .sites-tarefas a {
+     color: #5DB4D6;
+     /* Azul claro */
+     text-decoration: none;
+     font-weight: 600;
+ }
 
-        #tarefa::placeholder {
-            color: orangered;
-            /* background: #000000; */
-        }
+ .sites-tarefas {
+    background: silver;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+ }
 
-        /* ------- BOTÃO ------- */
-        button {
-            padding: 10px;
-            width: 100%;
-            background: #5A00FF;
-            color: rgb(246, 255, 0);
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: .3s;
-            font-weight: bold;
-        }
+ /* Quando passar o mouse */
+ .sites-tarefas a:hover {
+     color: #8FD1E8;
+     /* Azul mais claro */
+     text-decoration: underline;
+ }
 
-        button:hover {
-            background: #4200c7;
-        }
+ /* Quando o link já foi visitado */
+ .sites-tarefas a:visited {
+     color: #A7C15C;
+     /* Verde claro */
+ }
 
-        /* ------- LISTA ------- */
-        ul {
-            margin-top: 20px;
-            width: 100%;
-            list-style: none;
-        }
+ /* Quando clicar no link */
+ .sites-tarefas a:active {
+     color: #587B2A;
+     /* Verde escuro */
+ }
 
-        ul li {
-            background: #f3f3f3;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 8px;
-            transition: .3s;
-        }
+ /* ------- INPUT ------- */
+ #tarefa {
+     width: 100%;
+     padding: 10px;
+     border: 2px solid #e7915c;
+     border-radius: 10px;
+     outline: none;
+     margin-bottom: 10px;
+     color: orangered;
+ }
 
-        ul li:hover {
-            background: #e8e8e8;
-        }
+ #tarefa::placeholder {
+     color: orangered;
+     /* background: #000000; */
+ }
+
+ /* ------- BOTÃO ------- */
+ button {
+     padding: 10px;
+     width: 100%;
+     background: #5A00FF;
+     color: rgb(246, 255, 0);
+     border: none;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: .3s;
+     font-weight: bold;
+ }
+
+ button:hover {
+     background: #4200c7;
+ }
+
+ /* ------- LISTA ------- */
+ ul {
+     margin-top: 20px;
+     width: 100%;
+     list-style: none;
+ }
+
+ ul li {
+     background: #f3f3f3;
+     padding: 10px;
+     margin: 5px 0;
+     border-radius: 8px;
+     transition: .3s;
+ }
+
+ ul li:hover {
+     background: #e8e8e8;
+ }
