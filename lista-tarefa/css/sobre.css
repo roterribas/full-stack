@@ -1,0 +1,113 @@
+/* --- Reset e fonte --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* --- Cor base do fundo --- */
+body {
+    background: #fdfaff;
+    overflow-x: hidden;
+}
+
+/* --- Fundo decorativo com animação --- */
+.fundo {
+    background-image: url("https://i.imgur.com/tGUm5Ad.png"); /* textura pastel */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    animation: flutuar 10s infinite alternate ease-in-out;
+}
+
+@keyframes flutuar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(25px); }
+}
+
+/* --- Card principal com efeito vidro --- */
+.container {
+    max-width: 850px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 40px;
+    border-radius: 22px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(180, 160, 200, 0.25);
+    animation: entrar 0.6s ease forwards;
+}
+
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Títulos --- */
+h1 {
+    color: #b05be0;
+    margin-bottom: 15px;
+}
+h2 {
+    color: #6a82f7;
+    margin-top: 25px;
+}
+h3 {
+    margin-top: 30px;
+    color: #ff7ecb;
+    font-size: 22px;
+}
+
+/* --- Lista de interesses (ul) --- */
+ul {
+    margin-top: 10px;
+}
+ul li {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+/* --- Lista ordenada (NOMES) --- */
+ol {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+ol li {
+    margin: 6px 0;
+    font-size: 18px;
+    color: #7a4aa8;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+ol li:hover {
+    transform: scale(1.06);
+    color: #b66cff;
+    cursor: pointer;
+}
+
+/* --- Botão estilizado --- */
+.botao {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: #ffb3d1;
+    color: #4d1d63;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.botao:hover {
+    background: #ffcfe2;
+    transform: scale(1.07);
+    box-shadow: 0 0 12px rgba(255, 182, 212, 0.6);
+}
