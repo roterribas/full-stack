@@ -1,113 +1,141 @@
 /* --- Reset e fonte --- */
-* { /* Seleciona todos os elementos da página */
-    margin: 0; /* Remove margens padrão dos navegadores */
-    padding: 0; /* Remove espaçamentos internos padrão */
-    box-sizing: border-box; /* Faz padding e border entrarem no cálculo de largura/altura */
-    font-family: "Poppins", Arial, sans-serif; /* Define a família de fontes padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
 }
 
 /* --- Cor base do fundo --- */
-body { /* Seleciona o elemento <body> */
-    background: #fdfaff; /* Cor de fundo base (off-white com tom rosado/pastel) */
-    overflow-x: hidden; /* Evita scrollbar horizontal caso algo saia da largura da tela */
+body {
+    background: #fdfaff;
+    overflow-x: hidden;
 }
 
 /* --- Fundo decorativo com animação --- */
-.fundo { /* Seleciona o elemento que funciona como camada de fundo decorativo */
-    background-image: url("https://i.imgur.com/tGUm5Ad.png"); /* Imagem de textura pastel usada como fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a área disponível mantendo proporção */
-    background-position: center; /* Centraliza a imagem no elemento */
-    opacity: 0.45; /* Define opacidade (0 = transparente, 1 = opaco) para torná-la suave */
-    position: fixed; /* Fixa o fundo na tela; não se move ao rolar a página */
-    inset: 0; /* Atalho para top:0; right:0; bottom:0; left:0; preenchendo toda a viewport */
-    z-index: -1; /* Coloca a camada atrás do conteúdo principal */
-    animation: flutuar 10s infinite alternate ease-in-out; /* Aplica animação nomeada 'flutuar' com duração 10s em loop alternado */
+.fundo {
+    background-image: url("https://i.imgur.com/tGUm5Ad.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    animation: flutuar 10s infinite alternate ease-in-out;
 }
 
-@keyframes flutuar { /* Declara as etapas da animação 'flutuar' */
-    from { transform: translateY(0px); } /* Estado inicial sem deslocamento vertical */
-    to { transform: translateY(25px); } /* Estado final movendo 25px para baixo */
+@keyframes flutuar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(25px); }
 }
 
 /* --- Card principal com efeito vidro --- */
-.container { /* Seleciona o container principal que agrupa o conteúdo */
-    max-width: 850px; /* Largura máxima do container para manter leitura confortável */
-    margin: 80px auto; /* Espaçamento superior/inferior de 80px e centraliza horizontalmente */
-    background: rgba(255, 255, 255, 0.75); /* Fundo semi-transparente branco (efeito vidro) */
-    padding: 40px; /* Espaçamento interno generoso para o conteúdo respirar */
-    border-radius: 22px; /* Bordas arredondadas para um visual suave */
-    backdrop-filter: blur(8px); /* Desfoque de fundo através do elemento (suporta glass effect em navegadores modernos) */
-    box-shadow: 0 0 20px rgba(180, 160, 200, 0.25); /* Sombra suave ao redor do container para destacá-lo */
-    animation: entrar 0.6s ease forwards; /* Animação de entrada suave ao carregar a página */
+.container {
+    max-width: 850px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 40px;
+    border-radius: 22px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(180, 160, 200, 0.25);
+    animation: entrar 0.6s ease forwards;
 }
 
-@keyframes entrar { /* Declara as etapas da animação 'entrar' */
+@keyframes entrar {
     from {
-        opacity: 0; /* Começa invisível */
-        transform: translateY(25px); /* Começa deslocado para baixo */
+        opacity: 0;
+        transform: translateY(25px);
     }
     to {
-        opacity: 1; /* Termina totalmente visível */
-        transform: translateY(0); /* Termina na posição original */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* --- Títulos --- */
-h1 { /* Estilo do título principal */
-    color: #b05be0; /* Cor pastel roxo/rosa para destaque */
-    margin-bottom: 15px; /* Espaço abaixo do h1 */
+/* ✅ Títulos estilo agenda, centralizados */
+h1, h2, h3 {
+    display: inline-block;
+    position: relative;
+    padding: 10px 40px;
+    margin: 25px auto;
+    border-radius: 12px;
+    font-weight: bold;
+    width: fit-content;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
 }
-h2 { /* Estilo dos títulos secundários */
-    color: #6a82f7; /* Cor azul/roxo suave */
-    margin-top: 25px; /* Espaço acima do h2 para separação das seções */
+
+/* Cores diferentes por nível */
+h1 {
+    background: #d2b3ffcc;
+    color: #4d0d7a;
 }
-h3 { /* Estilo do título da seção 'NOMES' */
-    margin-top: 30px; /* Espaçamento maior acima do h3 */
-    color: #ff7ecb; /* Cor rosa pastel */
-    font-size: 22px; /* Tamanho de fonte um pouco menor que h2 */
+h2 {
+    background: #b9c7ffcc;
+    color: #1d2d7a;
+}
+h3 {
+    background: #ffc6e1cc;
+    color: #7a1d5a;
+}
+
+/* Ícones como marcadores de página */
+h1::before, h2::before, h3::before {
+    margin-right: 10px;
+}
+h1::before { content: "📌"; }
+h2::before { content: "📍"; }
+h3::before { content: "⭐"; }
+
+/* Efeito ao passar o mouse */
+h1:hover, h2:hover, h3:hover {
+    transform: translateX(-50%) translateY(-3px);
 }
 
 /* --- Lista de interesses (ul) --- */
-ul { /* Estilo do contêiner da lista não ordenada */
-    margin-top: 10px; /* Espaço acima da lista */
+ul {
+    margin-top: 10px;
 }
-ul li { /* Estilo de cada item da lista não ordenada */
-    margin: 8px 0; /* Espaçamento vertical entre itens */
-    font-size: 18px; /* Tamanho de texto agradável para leitura */
+ul li {
+    margin: 8px 0;
+    font-size: 18px;
 }
 
 /* --- Lista ordenada (NOMES) --- */
-ol { /* Estilo do contêiner da lista ordenada */
-    margin-top: 10px; /* Espaço acima da lista ordenada */
-    padding-left: 25px; /* Espaço à esquerda para conter os números da lista */
+ol {
+    margin-top: 10px;
+    padding-left: 25px;
 }
-ol li { /* Estilo de cada item da lista ordenada */
-    margin: 6px 0; /* Espaçamento vertical entre itens */
-    font-size: 18px; /* Tamanho do texto consistente com outras listas */
-    color: #7a4aa8; /* Cor do texto em tom roxo pastel */
-    font-weight: 600; /* Peso da fonte um pouco mais forte para destaque */
-    transition: 0.25s ease; /* Transição suave para declarações que mudam (ex: transform, color) */
+ol li {
+    margin: 6px 0;
+    font-size: 18px;
+    color: #7a4aa8;
+    font-weight: 600;
+    transition: 0.25s ease;
 }
-ol li:hover { /* Estado quando o cursor passa por cima de um item da lista ordenada */
-    transform: scale(1.06); /* Aumenta levemente o item para efeito de destaque */
-    color: #b66cff; /* Muda a cor para um tom mais vibrante ao passar o mouse */
-    cursor: pointer; /* Mostra que o item é interativo (mãozinha) */
+ol li:hover {
+    transform: scale(1.06);
+    color: #b66cff;
+    cursor: pointer;
 }
 
 /* --- Botão estilizado --- */
-.botao { /* Estilo geral do link que funciona como botão */
-    display: inline-block; /* Permite definir padding e transformações mantendo-se em linha */
-    margin-top: 25px; /* Espaço acima do botão */
-    padding: 12px 22px; /* Espaço interno do botão (vertical x horizontal) */
-    background: #ffb3d1; /* Cor de fundo rosa pastel */
-    color: #4d1d63; /* Cor do texto do botão (roxo escuro) */
-    text-decoration: none; /* Remove sublinhado dos links */
-    border-radius: 20px; /* Bordas arredondadas do botão */
-    font-weight: bold; /* Texto do botão em negrito */
-    transition: 0.3s ease; /* Transição suave para hover e transformações */
+.botao {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: #ffb3d1;
+    color: #4d1d63;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
-.botao:hover { /* Estado do botão ao passar o mouse */
-    background: #ffcfe2; /* Tom de rosa mais claro ao hover */
-    transform: scale(1.07); /* Leve aumento do botão para efeito de interação */
-    box-shadow: 0 0 12px rgba(255, 182, 212, 0.6); /* Sombra luminosa para enfatizar o hover */
+.botao:hover {
+    background: #ffcfe2;
+    transform: scale(1.07);
+    box-shadow: 0 0 12px rgba(255, 182, 212, 0.6);
 }
