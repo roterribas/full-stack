@@ -1,0 +1,93 @@
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+h1 {
+    color: #ff4fb0;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #ff4fb0;
+    border: none;
+    margin-top: 25px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ff2f9c;
+}
+
+.lista {
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin-top: 10px;
+    min-height: 60px;
+    text-align: left;
+    color: #777;
+    font-size: 14px;
+    display: block;
+}
+
+.item {
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acoes button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.editar { background: #f0ad4e; }
+.apagar { background: #d9534f; }
