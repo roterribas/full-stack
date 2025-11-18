@@ -1,123 +1,161 @@
+/* Define cor de fundo geral da página e um espaçamento interno */
 body {
-    background: #f1f3f5;
-    padding: 30px;
+    background: #f1f3f5; /* Fundo cinza claro */
+    padding: 30px; /* Espaço interno nas bordas */
 }
 
-/* CONTAINER */
+/* =====================
+   CONTAINER PRINCIPAL
+   ===================== */
+
+/* Caixa central onde fica o conteúdo */
 .container {
-    max-width: 500px;
-    margin: auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 500px; /* Largura máxima da caixa */
+    margin: auto; /* Centraliza horizontalmente */
+    background: #fff; /* Fundo branco */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
-/* TÍTULO PRINCIPAL */
+/* =====================
+   TÍTULO PRINCIPAL
+   ===================== */
+
+/* Estiliza o <h1> dentro do container */
 .container h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #d603c1;
-    letter-spacing: 1px;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 25px; /* Espaço abaixo */
+    font-size: 28px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    color: #d603c1; /* Rosa forte */
+    letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
-/* SUBTÍTULOS */
+/* =====================
+   SUBTÍTULOS
+   ===================== */
+
+/* Classe usada como subtítulo visual */
 .h2 {
-    margin-top: 35px;
-    margin-bottom: 15px;
-    font-size: 22px;
-    text-align: center;
-    color: #333;
+    margin-top: 35px; /* Distância acima */
+    margin-bottom: 15px; /* Distância abaixo */
+    font-size: 22px; /* Tamanho da fonte */
+    text-align: center; /* Centralizado */
+    color: #333; /* Cinza escuro */
 }
 
-/* FORMULÁRIO */
+/* =====================
+   FORMULÁRIO
+   ===================== */
+
+/* Espaçamento entre os grupos (nome, email, telefone) */
 .form .group {
     margin-bottom: 15px;
 }
 
-
+/* Estilo do texto da label */
 .group label {
-    font-weight: bold;
-    color: #444;
-    font-size: 14px;
+    font-weight: bold; /* Negrito */
+    color: #444; /* Cinza médio */
+    font-size: 14px; /* Tamanho menor para rótulos */
 }
 
+/* Estilo dos inputs (caixas de texto) */
 .group input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    transition: 0.3s;
-    font-size: 15px;
+    width: 100%; /* Preenche toda a largura */
+    padding: 10px; /* Espaço interno */
+    margin-top: 6px; /* Espaço entre label e input */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 10px; /* Cantos arredondados */
+    transition: 0.3s; /* Animação suave ao focar */
+    font-size: 15px; /* Tamanho do texto digitado */
 }
 
+/* Quando o usuário clica (focus) no input */
 .group input:focus {
-    border-color: #4c6ef5;
-    box-shadow: 0px 0px 5px rgba(76,110,245,0.4);
-    outline: none;
+    border-color: #4c6ef5; /* Borda azul */
+    box-shadow: 0px 0px 5px rgba(76,110,245,0.4); /* Sombra azul ao redor */
+    outline: none; /* Remove contorno padrão do navegador */
 }
+
+/* =====================
+   BOTÃO PRINCIPAL
+   ===================== */
 
 button {
-    width: 100%;
+    width: 100%; /* Botão ocupa toda a largura */
     margin-top: 10px;
-    padding: 12px;
-    background: #d603c1;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
+    padding: 12px; /* Altura confortável */
+    background: #d603c1; /* Fundo rosa */
+    color: #fff; /* Texto branco */
+    border: none; /* Sem borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mãozinha */
+    transition: 0.3s; /* Animação ao passar o mouse */
+    font-weight: bold; /* Negrito */
 }
 
+/* Efeito hover do botão */
 .group button:hover {
-    background: #364fc7;
+    background: #364fc7; /* Muda para azul escuro */
 }
 
-/* LISTA DE CONTATOS */
+/* =====================
+   LISTA DE CONTATOS
+   ===================== */
+
 .lista {
-    list-style: none;
+    list-style: none; /* Remove bolinhas da lista */
     margin-top: 15px;
-    padding: 0;
+    padding: 0; /* Remove espaçamento padrão */
 }
 
+/* Cada item da lista */
 .lista li {
-    background: #ffffff;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    border-left: 6px solid #4c6ef5;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    transition: 0.2s ease;
+    background: #ffffff; /* Fundo branco */
+    padding: 15px; /* Espaço interno */
+    margin-bottom: 12px; /* Espaço entre itens */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra leve */
+    border-left: 6px solid #4c6ef5; /* Barra azul na esquerda */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Itens organizados em coluna */
+    gap: 4px; /* Espaço entre elementos internos */
+    transition: 0.2s ease; /* Animação suave */
 }
 
+/* Efeito ao passar o mouse nos contatos */
 .lista li:hover {
-    transform: scale(1.02);
-    background: #f8faff;
+    transform: scale(1.02); /* Leve zoom */
+    background: #f8faff; /* Fundo levemente azul */
 }
 
-/* TEXTO DOS CONTATOS */
+/* =====================
+   TEXTO DOS CONTATOS
+   ===================== */
+
+/* Nome do contato */
 .contato-nome {
     font-size: 18px;
     font-weight: bold;
     color: #333;
 }
 
+/* Email e telefone */
 .contato-email,
 .contato-telefone {
     font-size: 14px;
     color: #555;
 }
 
-/* ITEM DE EXEMPLO */
+/* =====================
+   ITEM DE EXEMPLO
+   ===================== */
+
+/* Quando a lista está vazia, mostra texto apagado */
 .item-exemplo {
-    opacity: 0.6;
-    font-style: italic;
+    opacity: 0.6; /* Semitransparente */
+    font-style: italic; /* Itálico */
 }

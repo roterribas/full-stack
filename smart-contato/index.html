@@ -1,44 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Contatos</title>
+    <meta charset="UTF-8"> <!-- Define a codificação como UTF-8 (suporta acentos) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste responsivo para celular -->
+    <title>Smart Contatos</title> <!-- Título que aparece na aba do navegador -->
+
+    <!-- Importa o arquivo de estilos principal -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Importa um reset CSS para remover estilos padrões dos navegadores -->
     <link rel="stylesheet" href="./css/reset.css">
 </head>
-<body>
-    <main class="container">
-        <h1>Cadastro de Contatos</h1>
 
+<body>
+    <main class="container"> <!-- Container principal central -->
+        <h1>Cadastro de Contatos</h1> <!-- Título da página -->
+
+        <!-- Formulário de cadastro -->
         <form class="form">
-            <section class="group">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome..." />
+            
+            <!-- Campo Nome -->
+            <section class="group"> <!-- Agrupa um label + input -->
+                <label for="nome">Nome</label> <!-- Label do campo -->
+                <input type="text" id="nome" placeholder="Digite seu nome..." /> <!-- Entrada de texto -->
             </section>
 
+            <!-- Campo Email -->
             <section class="group">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Digite seu email..."  />
+                <input type="text" id="email" placeholder="Digite seu email..." />
             </section>
 
+            <!-- Campo Telefone -->
             <section class="group">
                 <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" placeholder="Digite seu telefone..."  />
+                <input type="tel" id="telefone" placeholder="Digite seu telefone..." />
             </section>
 
+            <!-- Botão de enviar -->
             <button type="submit">Cadastrar</button>
         </form>
 
-        <h2>Lista de Contatos</h2>
+        <h2>Lista de Contatos</h2> <!-- Título da lista -->
 
+        <!-- Lista onde os contatos cadastrados aparecerão -->
         <ul class="lista">
-            <!-- Aqui a lista vai aparecer (Futuramente com JS) -->
-            <li>A lista aparecerá aqui...</li>
+            <li>A lista aparecerá aqui...</li> <!-- Item inicial (para mostrar estrutura) -->
         </ul>
 
     </main>
     
+    <!-- Importa o JavaScript que controla o cadastro -->
     <script src="./js/script.js"></script>
 </body>
 </html>

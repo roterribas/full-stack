@@ -1,3 +1,4 @@
+/* Reset geral para remover estilos padrão dos navegadores */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -7,37 +8,43 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;              /* Remove todas as margens padrão */
+    padding: 0;             /* Remove todos os paddings padrão */
+    border: 0;              /* Remove bordas padrão */
+    font-size: 100%;        /* Mantém tamanho base da fonte */
+    font: inherit;          /* Herda a família da fonte corretamente */
+    vertical-align: baseline; /* Alinha elementos inline corretamente */
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+
+/* Faz HTML5 funcionar corretamente em navegadores antigos */
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block; /* Garante que esses elementos sejam exibidos como bloco */
 }
+
 body {
-	line-height: 1;
+    line-height: 1; /* Remove espaçamento vertical padrão da linha */
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none; /* Remove marcadores de listas */
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none; /* Remove formatação automática de aspas */
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';   /* Remove conteúdos automáticos (as aspas) */
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse; /* Remove espaçamento entre as células */
+    border-spacing: 0; /* Define zero de espaçamento entre bordas das células */
 }
