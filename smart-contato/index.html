@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cadastro de Contatos</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contatos</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
 </head>
 <body>
+    <main class="container">
+        <h1>Cadastro de Contatos</h1>
 
-<div class="container">
-    <h1>Cadastro de Contatos</h1>
+        <form class="form">
+            <section class="group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome..." />
+            </section>
 
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" placeholder="Digite o nome">
+            <section class="group">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Digite seu email..."  />
+            </section>
 
-    <label for="email">Email</label>
-    <input type="text" id="email" placeholder="Digite o email">
+            <section class="group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" placeholder="Digite seu telefone..."  />
+            </section>
 
-    <label for="telefone">Telefone</label>
-    <input type="text" id="telefone" placeholder="Digite o telefone" maxlength="15">
+            <button type="submit">Cadastrar</button>
+        </form>
 
-    <button id="btnSalvar">Cadastrar</button>
+        <h2>Lista de Contatos</h2>
 
-    <h2>Lista de Contatos</h2>
-    <div id="listaContatos" class="lista">A lista aparecerá aqui...</div>
-</div>
+        <ul class="lista">
+            <!-- Aqui a lista vai aparecer (Futuramente com JS) -->
+            <li>A lista aparecerá aqui...</li>
+        </ul>
 
-<script src="script.js"></script>
+    </main>
+    
+    <script src="./js/script.js"></script>
 </body>
 </html>
