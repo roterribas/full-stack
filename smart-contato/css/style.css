@@ -1,161 +1,162 @@
-/* Define cor de fundo geral da página e um espaçamento interno */
+/* Fundo geral */
 body {
-    background: #f1f3f5; /* Fundo cinza claro */
-    padding: 30px; /* Espaço interno nas bordas */
+    background: #247ed9;
+    padding: 30px;
 }
 
-/* =====================
-   CONTAINER PRINCIPAL
-   ===================== */
-
-/* Caixa central onde fica o conteúdo */
+/* CONTAINER */
 .container {
-    max-width: 500px; /* Largura máxima da caixa */
-    margin: auto; /* Centraliza horizontalmente */
-    background: #fff; /* Fundo branco */
-    padding: 30px; /* Espaçamento interno */
-    border-radius: 20px; /* Cantos arredondados */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra suave */
+    max-width: 500px;
+    margin: auto;
+    background: #5d5d9e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* =====================
-   TÍTULO PRINCIPAL
-   ===================== */
-
-/* Estiliza o <h1> dentro do container */
+/* TÍTULO */
 .container h1 {
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 25px; /* Espaço abaixo */
-    font-size: 28px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    color: #d603c1; /* Rosa forte */
-    letter-spacing: 1px; /* Espaçamento entre letras */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #d603c1;
+    letter-spacing: 1px;
 }
 
-/* =====================
-   SUBTÍTULOS
-   ===================== */
-
-/* Classe usada como subtítulo visual */
-.h2 {
-    margin-top: 35px; /* Distância acima */
-    margin-bottom: 15px; /* Distância abaixo */
-    font-size: 22px; /* Tamanho da fonte */
-    text-align: center; /* Centralizado */
-    color: #333; /* Cinza escuro */
+/* SUBTÍTULO (H2) – corrigido */
+h2 {
+    font-size: 20px !important;
+    margin-top: 40px !important;
+    margin-bottom: 25px !important;
+    text-align: center;
+    color: #ffffff;
 }
 
-/* =====================
-   FORMULÁRIO
-   ===================== */
-
-/* Espaçamento entre os grupos (nome, email, telefone) */
+/* FORMULÁRIO */
 .form .group {
     margin-bottom: 15px;
 }
 
-/* Estilo do texto da label */
 .group label {
-    font-weight: bold; /* Negrito */
-    color: #444; /* Cinza médio */
-    font-size: 14px; /* Tamanho menor para rótulos */
+    font-weight: bold;
+    color: #ffaa00cf;
+    font-size: 20px;
 }
 
-/* Estilo dos inputs (caixas de texto) */
+/* INPUTS */
 .group input {
-    width: 100%; /* Preenche toda a largura */
-    padding: 10px; /* Espaço interno */
-    margin-top: 6px; /* Espaço entre label e input */
-    border: 1px solid #ccc; /* Borda padrão */
-    border-radius: 10px; /* Cantos arredondados */
-    transition: 0.3s; /* Animação suave ao focar */
-    font-size: 15px; /* Tamanho do texto digitado */
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 15px;
+    color: #ffaa00cf;
+    background: #0404c8;
 }
 
-/* Quando o usuário clica (focus) no input */
+.group input::placeholder {
+    color: #ffd27acf;
+}
+
 .group input:focus {
-    border-color: #4c6ef5; /* Borda azul */
-    box-shadow: 0px 0px 5px rgba(76,110,245,0.4); /* Sombra azul ao redor */
-    outline: none; /* Remove contorno padrão do navegador */
+    border-color: #4c6ef5;
+    box-shadow: 0px 0px 5px rgba(76,110,245,0.4);
+    outline: none;
 }
 
-/* =====================
-   BOTÃO PRINCIPAL
-   ===================== */
-
+/* BOTÃO PRINCIPAL */
 button {
-    width: 100%; /* Botão ocupa toda a largura */
+    width: 100%;
     margin-top: 10px;
-    padding: 12px; /* Altura confortável */
-    background: #d603c1; /* Fundo rosa */
-    color: #fff; /* Texto branco */
-    border: none; /* Sem borda */
-    border-radius: 10px; /* Bordas arredondadas */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de mãozinha */
-    transition: 0.3s; /* Animação ao passar o mouse */
-    font-weight: bold; /* Negrito */
+    padding: 12px;
+    background: #600357;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
 }
 
-/* Efeito hover do botão */
-.group button:hover {
-    background: #364fc7; /* Muda para azul escuro */
+/* Corrigido: hover deve ser button:hover e não .group button:hover */
+button:hover {
+    background: #364fc7;
 }
 
-/* =====================
-   LISTA DE CONTATOS
-   ===================== */
-
+/* LISTA DE CONTATOS */
 .lista {
-    list-style: none; /* Remove bolinhas da lista */
+    list-style: none;
     margin-top: 15px;
-    padding: 0; /* Remove espaçamento padrão */
+    padding: 0;
 }
 
-/* Cada item da lista */
 .lista li {
-    background: #ffffff; /* Fundo branco */
-    padding: 15px; /* Espaço interno */
-    margin-bottom: 12px; /* Espaço entre itens */
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra leve */
-    border-left: 6px solid #4c6ef5; /* Barra azul na esquerda */
-    display: flex; /* Layout flexível */
-    flex-direction: column; /* Itens organizados em coluna */
-    gap: 4px; /* Espaço entre elementos internos */
-    transition: 0.2s ease; /* Animação suave */
+    background: #000000;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    border-left: 6px solid #4c6ef5;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: 0.2s ease;
+    color: white;
 }
 
-/* Efeito ao passar o mouse nos contatos */
+/* HOVER NOS ITENS */
 .lista li:hover {
-    transform: scale(1.02); /* Leve zoom */
-    background: #f8faff; /* Fundo levemente azul */
+    transform: scale(1.02);
+    background: #0a0a0a;
 }
 
-/* =====================
-   TEXTO DOS CONTATOS
-   ===================== */
-
-/* Nome do contato */
+/* TEXTO DOS CONTATOS */
 .contato-nome {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
 }
 
-/* Email e telefone */
 .contato-email,
 .contato-telefone {
     font-size: 14px;
-    color: #555;
+    color: #ffffff;
 }
 
-/* =====================
-   ITEM DE EXEMPLO
-   ===================== */
+/* BOTÕES DE EDITAR / REMOVER */
+.btn-editar, .btn-remover {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 5px;
+    transition: 0.2s;
+}
 
-/* Quando a lista está vazia, mostra texto apagado */
+.btn-editar {
+    background: #ffd43b; /* amarelo */
+}
+
+.btn-remover {
+    background: #e03131; /* vermelho */
+    color: white;
+}
+
+.btn-editar:hover {
+    background: #fcc419;
+}
+
+.btn-remover:hover {
+    background: #c92a2a;
+}
+
+/* TEXTO DE LISTA VAZIA */
 .item-exemplo {
-    opacity: 0.6; /* Semitransparente */
-    font-style: italic; /* Itálico */
+    opacity: 0.6;
+    font-style: italic;
 }
