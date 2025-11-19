@@ -45,6 +45,15 @@ function salvarLocal() {
 
 
 // =====================
+// ALTERAR TEXTO DO BOTÃO
+// =====================
+function atualizarBotao() {
+    const botao = document.querySelector("button[type='submit']");
+    botao.textContent = editIndex !== null ? "Atualizar" : "Cadastrar";
+}
+
+
+// =====================
 // EVENTO DO FORM
 // =====================
 document.querySelector(".form").addEventListener("submit", function (event) {
@@ -81,18 +90,19 @@ function cadastrar() {
         contatos[editIndex] = { nome, email, telefone };
         editIndex = null;
     } else {
-        // CADASTRANDO NOVO
+        // CADASTRO NOVO
         contatos.push({ nome, email, telefone });
     }
 
     salvarLocal();
     limparCampos();
+    atualizarBotao();
     atualizarLista();
 }
 
 
 // =====================
-// ATUALIZAR LISTA NA TELA
+// ATUALIZAR LISTA
 // =====================
 function atualizarLista() {
     const lista = document.querySelector(".lista");
@@ -118,7 +128,6 @@ function atualizarLista() {
             </div>
         `;
 
-        // ADICIONA EMBAIXO (append)
         lista.appendChild(li);
     });
 }
@@ -135,6 +144,7 @@ function editar(index) {
     document.getElementById("telefone").value = contato.telefone;
 
     editIndex = index;
+    atualizarBotao();
 }
 
 
@@ -161,6 +171,9 @@ function limparCampos() {
 
 
 // =====================
-// CARREGAR LISTA AO ABRIR A PÁGINA
+// CARREGAR LISTA AO INICIAR
 // =====================
-document.addEventListener("DOMContentLoaded", atualizarLista);
+document.addEventListener("DOMContentLoaded", () => {
+    atualizarLista();
+    atualizarBotao();
+});
