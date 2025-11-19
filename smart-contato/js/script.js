@@ -49,7 +49,15 @@ function salvarLocal() {
 // =====================
 function atualizarBotao() {
     const botao = document.querySelector("button[type='submit']");
+    if (!botao) return;
     botao.textContent = editIndex !== null ? "Atualizar" : "Cadastrar";
+
+    // se você usar classe .btn-atualizar em vez de só texto, pode alternar a classe:
+    if (editIndex !== null) {
+        botao.classList.add("btn-atualizar");
+    } else {
+        botao.classList.remove("btn-atualizar");
+    }
 }
 
 
@@ -69,6 +77,7 @@ function cadastrar() {
     const nome = document.getElementById("nome").value.trim();
     const email = document.getElementById("email").value.trim();
     const telefone = document.getElementById("telefone").value.trim();
+    const endereco = document.getElementById("endereco") ? document.getElementById("endereco").value.trim() : "";
 
     if (nome === "") {
         alert("Digite um nome válido!");
@@ -87,11 +96,11 @@ function cadastrar() {
 
     if (editIndex !== null) {
         // EDITANDO
-        contatos[editIndex] = { nome, email, telefone };
+        contatos[editIndex] = { nome, email, telefone, endereco };
         editIndex = null;
     } else {
         // CADASTRO NOVO
-        contatos.push({ nome, email, telefone });
+        contatos.push({ nome, email, telefone, endereco });
     }
 
     salvarLocal();
@@ -117,14 +126,20 @@ function atualizarLista() {
         const li = document.createElement("li");
         li.classList.add("item");
 
-        li.innerHTML = `
-            <span class="contato-nome">${contato.nome}</span>
-            <span class="contato-email">${contato.email}</span>
-            <span class="contato-telefone">${contato.telefone}</span>
+        // monta o HTML incluindo o endereço (se existir)
+        const enderecoHtml = contato.endereco ? `<div class="contato-endereco">${contato.endereco}</div>` : "";
 
-            <div style="margin-top: 10px;">
-                <button class="btn-editar" onclick="editar(${index})">✏️</button>
-                <button class="btn-remover" onclick="remover(${index})">🗑️</button>
+        li.innerHTML = `
+            <div>
+                <div class="contato-nome">${contato.nome}</div>
+                <div class="contato-email">${contato.email}</div>
+                <div class="contato-telefone">${contato.telefone}</div>
+                ${enderecoHtml}
+            </div>
+
+            <div class="acoes-contato">
+                <button class="btn-editar" onclick="editar(${index})" aria-label="Editar contato">✏️</button>
+                <button class="btn-remover" onclick="remover(${index})" aria-label="Remover contato">🗑️</button>
             </div>
         `;
 
@@ -142,9 +157,15 @@ function editar(index) {
     document.getElementById("nome").value = contato.nome;
     document.getElementById("email").value = contato.email;
     document.getElementById("telefone").value = contato.telefone;
+    if (document.getElementById("endereco")) {
+        document.getElementById("endereco").value = contato.endereco || "";
+    }
 
     editIndex = index;
     atualizarBotao();
+
+    // focar no nome para UX
+    document.getElementById("nome").focus();
 }
 
 
@@ -156,6 +177,12 @@ function remover(index) {
         contatos.splice(index, 1);
         salvarLocal();
         atualizarLista();
+        // se estava editando esse índice, cancelar edição
+        if (editIndex === index) {
+            editIndex = null;
+            limparCampos();
+            atualizarBotao();
+        }
     }
 }
 
@@ -167,6 +194,9 @@ function limparCampos() {
     document.getElementById("nome").value = "";
     document.getElementById("email").value = "";
     document.getElementById("telefone").value = "";
+    if (document.getElementById("endereco")) {
+        document.getElementById("endereco").value = "";
+    }
 }
 
 
