@@ -1,0 +1,19 @@
+body {
+    background : rgb(14, 36, 146);
+    color: wheat;
+}
+
+a {
+  color: #FFD700; /* Cor do texto do link */
+}
+
+a:hover {
+  color: #FFA500; /* Cor quando passa o mouse */
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: red; /* Cor da linha */
+}
+

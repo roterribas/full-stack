@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.use(express.static('public'));
+
 // Variavel com os dados do produtos
 const produtos = [
     {id: 1, nome: `Produto A`, preco: 100},
