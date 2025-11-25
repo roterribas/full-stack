@@ -9,6 +9,13 @@ const produtos = [
     {id: 3, nome: `Produto C`, preco: 200},
 ];
 
+// Variavel de times
+const times = [
+    {id: 1, nome: 'Santos', ano: 1912},
+    {id: 2, nome: 'Mirasol', ano: 1920},
+    {id: 3, nome: 'Bangu', ano: 1904},
+]
+
 // Criar função
 // Rota principal
 app.get('/', (req, res) => {
@@ -24,6 +31,11 @@ app.get('/produtos', (req, res) => {
 app.get('/home', (req, res) => {
     // console.log("ola: ", __dirname);
     res.sendFile(__dirname + '/public/home.html')
+});
+
+// Rota Times
+app.get('/times', (req, res) => {
+    res.send(times);
 });
 
 // Executando o servidor
