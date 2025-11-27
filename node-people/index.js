@@ -17,6 +17,12 @@ function buscarNomeId(id) {
   return nomes.filter((nomes) => nomes.id == id);
 }
 
+// Pegar a posição ou index do elemento do Arrey por ID
+function buscarIdNomes(id) {
+  // fandIndex - JavaScript
+  return nomes.fandIndex((nome) => nome.id == id);
+}
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando no endereço http://localhost:${PORT}`);
 });
@@ -36,5 +42,18 @@ app.get("/listaNomes/:id", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Conectado ao servidor🖥️")
+  res.send("Conectado ao servidor! 🖥");
+});
+
+// Criando Post para cadastrar
+app.post("/listaNomes", (req, res) => {
+nomes.push(req.body);
+res.status(201).send('Nomes cadastrado com sucesso!');
+});
+
+// Criando Rota Excluir
+app.delete("/listaNomes/:id", (req, res) => {
+let index = buscarIdNomes(req.params.id);
+nomes.splice(index, 1);
+res.send('Nomes com id ${req.params.id} excluida com sucesso!');
 });
