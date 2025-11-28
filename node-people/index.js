@@ -113,6 +113,15 @@ app.post("/listaNomes", (req, res) => { // abre rota POST "/listaNomes"
   res.send('Nome cadastrado com sucesso!'); // envia mensagem de sucesso
 }); // fecha rota POST "/listaNomes"
 
+// alterar id
+app.put("/listaNomes/:id", (req, res) => {
+  let index = buscarIdNomes(req.params.id);
+  nomes[index].nome = req.body.nome;
+  nomes[index].idade = req.body.idade;
+
+  res.json(nomes);
+})
+
 // DELETE: remove pessoa pelo ID
 app.delete("/listaNomes/:id", (req, res) => { // abre rota DELETE "/listaNomes/:id"
   const index = buscarIdNomes(req.params.id); // busca índice do id no array
@@ -150,6 +159,16 @@ app.post("/listaTimes", (req, res) => { // abre rota POST "/listaTimes"
   times.push({ id, nome, estado, titulos }); // adiciona objeto no array
   res.send('Time cadastrado com sucesso!'); // envia mensagem de sucesso
 }); // fecha rota POST "/listaTimes"
+
+// alterar id
+app.put("/listaTimes/:id", (req, res) => {
+  let index = buscarIdTimes(req.params.id);
+  times[index].nome = req.body.nome;
+  times[index].estado = req.body.estado;
+  times[index].titulos = req.body.titulos;
+
+  res.json(times);
+})
 
 // DELETE: remove time pelo ID
 app.delete("/listaTimes/:id", (req, res) => { // abre rota DELETE "/listaTimes/:id"
