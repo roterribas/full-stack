@@ -18,7 +18,7 @@ app.use(express.json());
 // Rota GET para o caminho principal "/"
 // Quando alguém acessar http://localhost:3000/ o servidor retornará a mensagem abaixo.
 app.get("/", (req, res) => {
-    res.send("ola Node.js");
+    res.send("CONECTADO AO SERVIDOR!🗄");
 });
 
 
@@ -90,7 +90,7 @@ app.get("/cadastros/:id", (req, res) => {
 
     // Caso não encontre, retorna erro 404
     if (!item) {
-        return res.status(404).json({ erro: "Cadastro não encontrado" });
+        return res.status(404).json("Cadastro não encontrado");
     }
 
     // Caso encontre, retorna o objeto
@@ -129,7 +129,7 @@ app.put("/cadastros/:id", (req, res) => {
 
     // Se não existir, retorna erro
     if (index === -1) {
-        return res.status(404).json({ erro: "Cadastro não encontrado" });
+        return res.status(404).json("Cadastro não encontrado");
     }
 
     // Atualiza mantendo o mesmo ID
@@ -153,7 +153,7 @@ app.delete("/cadastros/:id", (req, res) => {
 
     // Se não existir, retorna erro
     if (index === -1) {
-        return res.status(404).json({ erro: "Cadastro não encontrado" });
+        return res.status(404).json("Cadastro não encontrado");
     }
 
     // Remove o item usando splice
