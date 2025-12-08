@@ -1,7 +1,7 @@
 // Importa o framework Express utilizando ES Modules.
 // O Express facilita a criação de servidores HTTP e rotas.
 import express from "express";
-import conexao from "/infra/conexao";
+import conexao from "../infra/conexao.js";
 
 // Cria uma instância padrão do Express, responsável por gerenciar rotas e middlewares.
 const app = express();
@@ -19,7 +19,16 @@ app.use(express.json());
 // Rota GET para o caminho principal "/"
 // Quando alguém acessar http://localhost:3000/ o servidor retornará a mensagem abaixo.
 app.get("/", (req, res) => {
-    res.send("CONECTADO AO SERVIDOR!🗄");
+    res.send("BEM VINDO A COPA DO MUNDO!");
+});
+
+// Buscar todas as seleçoes 
+app.get('/selecoes', (req, res) =>{
+    const sql = "select * from selecoes";
+
+    conexao.query(sql, (erro, result) => {
+        res.json(result);
+    })
 });
 
 // =====================================================
