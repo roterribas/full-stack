@@ -16,8 +16,11 @@ INSERT INTO selecoes(selecoes, grupo) VALUES
 ('Ilhas Solomão', 'C'),
 ('Nigeria', 'D'),
 ('Nova Zelandia', 'E'),
-('Japão', 'C'),
-('Croacia', 'B'),
-('Mexico', 'E');
+('Japão', 'C');
+
 
 select * from selecoes;
+
+INSERT INTO selecoes(selecoes, grupo) VALUES
+('Croacia', 'B'),
+('Mexico', 'E');
